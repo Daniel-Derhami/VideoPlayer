@@ -15,9 +15,25 @@
                // for Play and Pause icon animation
                           <svg class="playback-icons">
                        <use class="hidden" href="#paly-icon"></use>
+                       <use href="#pause"></use>
                    </svg>
 
                </div>
+               //video container
+               <video controls class="video" id="video" preload="metadata" poster="Poster.jpg">
+                   // source of the video
+                   <source src="Netherlands%20Road%20to%20World%20Cup%202022%20-%20All%20Goals.mp4" type="video/mp4">
+
+                   <div class="video-controls hidden" id="video-controls">
+                    <div class="video-progress">
+                       <progress id="progress-bar"></progress>
+
+                    </div>
+
+                   </div>
+
+               </video>
+
            </div>
 
 
