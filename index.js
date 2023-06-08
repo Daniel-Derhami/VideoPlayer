@@ -19,3 +19,14 @@ if (videoWorks) {
   video.controls = false;
   videoControls.classList.remove('hidden');
 }
+
+
+
+
+function togglePlay() {
+  if (video.paused || video.ended) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
