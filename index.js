@@ -1,8 +1,10 @@
+
 const video = document.getElementById('video');
 const videoControls = document.getElementById('video-controls');
 const playButton = document.getElementById('play');
 const playbackIcons = document.querySelectorAll('.playback-icons use');
-
+const timeElapsed = document.getElementById('time-elapsed');
+const duration = document.getElementById('duration');
 
 
 
@@ -55,4 +57,16 @@ function formatTime(timeInSeconds) {
     minutes: result.substr(3, 2),
     seconds: result.substr(6, 2),
   };
+}
+
+
+
+
+function initializeVideo() {
+  const videoDuration = Math.round(video.duration);
+  seek.setAttribute('max', videoDuration);
+  progressBar.setAttribute('max', videoDuration);
+  const time = formatTime(videoDuration);
+  duration.innerText = `${time.minutes}:${time.seconds}`;
+  duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
 }
