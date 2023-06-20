@@ -78,3 +78,11 @@ function updateTimeElapsed() {
   timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
   timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
 }
+
+
+
+
+function updateProgress() {
+  seek.value = Math.floor(video.currentTime);
+  progressBar.value = Math.floor(video.currentTime);
+}
