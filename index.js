@@ -102,3 +102,14 @@ function updateSeekTooltip(event) {
   const rect = video.getBoundingClientRect();
   seekTooltip.style.left = `${event.pageX - rect.left}px`;
 }
+
+
+
+function skipAhead(event) {
+  const skipTo = event.target.dataset.seek
+    ? event.target.dataset.seek
+    : event.target.value;
+  video.currentTime = skipTo;
+  progressBar.value = skipTo;
+  seek.value = skipTo;
+}
